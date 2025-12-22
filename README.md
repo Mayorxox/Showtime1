@@ -1,6 +1,6 @@
-# Chameleon — Testing Repo
+# Showtime — Testing Repo
 
-Chameleon is a developer-ready repository implementing a two-phase generative pipeline for
+Showtime is a developer-ready repository implementing a two-phase generative pipeline for
 synthesizing study-ready videos of autonomous devices. It supports:
 - Phase I: Input trajectory scripting (JSON trajectories)
 - Phase II: Compositional prompt generation (structured JSON prompts and composed text prompts)
