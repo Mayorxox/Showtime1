@@ -1,0 +1,99 @@
+Baseline
+{
+  "environment": {
+    "type": "urban_street_corner",
+    "layout": "sidewalk_with_crosswalk",
+    "pedestrians": {
+      "count": 3,
+      "behavior": "walking_slowly",
+      "density": "low"
+    },
+    "lighting": "daylight_overcast",
+    "camera": {
+      "viewpoint": "fixed_eye_level",
+      "distance_m": 6.0
+    }
+  },
+  "robot": {
+    "platform": "Clearpath_Jackal",
+    "scale": 1.0,
+    "locomotion": "four_wheeled",
+    "color": "matte_black",
+    "sensors": ["lidar", "front_camera"]
+  },
+  "behavior": {
+    "navigation": "goal_directed",
+    "speed_mps": 0.8,
+    "proxemic_distance_m": 1.5,
+    "yielding": true
+  }
+}
+Erratic Motion 
+{
+  "variant_id": "erratic_motion",
+  "environment": {
+    "inherit": "baseline"
+  },
+  "robot": {
+    "inherit": "baseline"
+  },
+  "behavior": {
+    "navigation": "unstable",
+    "speed_mps": {
+      "mean": 0.8,
+      "variance": 0.45
+    },
+    "acceleration": {
+      "profile": "jittery",
+      "jerk": "high"
+    },
+    "trajectory": {
+      "turn_frequency": "frequent",
+      "path_consistency": "low"
+    },
+    "stopping_behavior": {
+      "pattern": "irregular_stop_go",
+      "pause_duration_s": [0.3, 1.2]
+    },
+    "proxemic_distance_m": {
+      "target": 1.5,
+      "variance": 0.6
+    }
+  },
+  "rendering": {
+    "prompt_modifier": "simulate uncertainty or partial malfunction through irregular wheel motion and inconsistent navigation"
+  }
+}
+
+Massive Form 
+{
+  "variant_id": "massive_form",
+  "environment": {
+    "inherit": "baseline"
+  },
+  "robot": {
+    "platform": "Clearpath_Jackal",
+    "scale": 1.5,
+    "locomotion": "four_wheeled_heavy_treads",
+    "body_mass_visualization": "industrial_heavy",
+    "camera_mount": {
+      "position": "lowered",
+      "height_m": 0.35
+    },
+    "surface_material": "industrial_metal"
+  },
+  "behavior": {
+    "navigation": "deliberate",
+    "speed_mps": 0.45,
+    "acceleration": {
+      "profile": "slow_ramp",
+      "jerk": "low"
+    },
+    "proxemic_distance_m": 1.8,
+    "yielding": true
+  },
+  "rendering": {
+    "prompt_modifier": "convey mechanical weight, inertia, and industrial presence through scale and slow deliberate motion"
+  }
+}
+
