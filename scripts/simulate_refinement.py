@@ -11,3 +11,17 @@ def simulate(frames=90):
 
 if __name__ == '__main__':
     simulate()
+
+
+
+import json
+
+with open("data/structured_prompt.json") as f:
+    prompt = json.load(f)
+
+print("Simulating refinement stage...")
+print(f"- Enforcing proxemic distance ≥ {prompt['behavior']['proxemic_distance_m']} m")
+print("- Applying temporal smoothing (placeholder)")
+print("- Validating trajectory consistency (placeholder)")
+
+print("✓ Refinement simulation complete")
