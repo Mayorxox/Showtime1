@@ -1,27 +1,31 @@
-#!/usr/bin/env python3
-"""Generate example proxemic trajectories (JSON)"""
-import json, os, numpy as np
+import json
+from pathlib import Path
 
-OUT = 'data/trajectories'
-os.makedirs(OUT, exist_ok=True)
+output = {
+    "environment": {
+        "image": "assets/sample_frame.png",
+        "scene_type": "urban_street_corner",
+        "pedestrian_density": "low"
+    },
+    "device": {
+        "platform": "Clearpath Jackal",
+        "dimensions_m": {
+            "length": 0.5,
+            "width": 0.4,
+            "height": 0.3
+        },
+        "sensors": ["light_sensor"],
+        "locomotion": "wheeled"
+    },
+    "behavior": {
+        "proxemic_distance_m": 1.5,
+        "speed_profile": "constant",
+        "yielding": True
+    }
+}
 
-def generate(zone='social', duration=10, fps=15):
-    t = np.linspace(0, duration, int(duration*fps))
-    if zone == 'personal':
-        d = 0.45 + 0.5*np.sin(2*np.pi*t/duration)
-    elif zone == 'social':
-        d = 1.2 + 0.6*np.sin(2*np.pi*t/duration)
-    else:
-        d = 3.5 + 0.2*np.sin(2*np.pi*t/duration)
-    v = np.gradient(d, t)
-    angle = np.deg2rad(np.random.uniform(-10,10,len(t)))
-    traj = [{'t': float(tt), 'd': float(dd), 'v': float(vv), 'theta': float(a)} for tt,dd,vv,a in zip(t,d,v,angle)]
-    return traj
+Path("data").mkdir(exist_ok=True)
+with open("data/embeddings.json", "w") as f:
+    json.dump(output, f, indent=2)
 
-if __name__ == '__main__':
-    for z in ['personal','social','public']:
-        traj = generate(zone=z, duration=8, fps=15)
-        fname = os.path.join(OUT, f'trajectory_{z}.json')
-        with open(fname,'w') as f:
-            json.dump(traj, f, indent=2)
-        print('Wrote', fname)
+print("✓ Embeddings generated: data/embeddings.json")
