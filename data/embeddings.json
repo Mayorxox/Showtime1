@@ -1,0 +1,27 @@
+{
+  "environment": {
+    "image": "assets/sample_frame.png",
+    "scene_type": "urban_street_corner",
+    "pedestrian_density": "low"
+  },
+  "device": {
+    "platform": "Clearpath Jackal",
+    "dimensions_m": {
+      "length": 0.5,
+      "width": 0.4,
+      "height": 0.3
+    },
+    "sensors": ["light_sensor"],
+    "locomotion": "wheeled"
+  },
+  "behavior": {
+    "proxemic_distance_m": 1.5,
+    "speed_profile": "constant",
+    "yielding": true
+  }
+}
+
+if __name__ == "__main__":
+    embeddings = build_embeddings("data/images/sample_frame.png")
+    with open("data/embeddings/embeddings.json", "w") as f:
+        json.dump(embeddings, f, indent=2)
