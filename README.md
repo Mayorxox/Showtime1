@@ -1,9 +1,9 @@
-Chameleon — Generative Pipeline for Human-Centered Evaluation of Autonomous Systems
+Showtime — Generative Pipeline for Human-Centered Evaluation of Autonomous Systems
 
-Chameleon is a developer-ready research repository implementing a modular generative pipeline for synthesizing study-ready video stimuli of autonomous devices operating in urban environments.
+Showtime is a developer-ready research repository implementing a modular generative pipeline for synthesizing study-ready video stimuli of autonomous devices operating in urban environments.
 The repository mirrors the four phases described in the paper and is intended to support reproducible, controlled perception studies, rather than high-fidelity physical simulation.
 
-Chameleon focuses on social and perceptual validity—encoding environment, embodiment, and behavior constraints—rather than physics-accurate rendering.
+Showtime focuses on social and perceptual validity—encoding environment, embodiment, and behavior constraints—rather than physics-accurate rendering.
 
 Pipeline Overview
 
