@@ -1,11 +1,11 @@
-Showtime — Generative Pipeline for Human-Centered Evaluation of Autonomous Systems
+### Showtime — Generative Pipeline for Human-Centered Evaluation of Autonomous Systems
 
 Showtime is a developer-ready research repository implementing a modular generative pipeline for synthesizing study-ready video stimuli of autonomous devices operating in urban environments.
 The repository mirrors the four phases described in the paper and is intended to support reproducible, controlled perception studies, rather than high-fidelity physical simulation.
 
 Showtime focuses on social and perceptual validity—encoding environment, embodiment, and behavior constraints—rather than physics-accurate rendering.
 
-Pipeline Overview
+### Pipeline Overview
 
 The repository is structured to reflect the four phases of the Chameleon pipeline:
 
