@@ -1,0 +1,12 @@
+video:
+  duration_sec: [10, 20]
+  fps: [24, 30]
+
+behavior:
+  proxemic_distance_m: [1.0, 2.5]
+  speed_mps: [0.3, 1.2]
+
+visual:
+  scale_factor: [0.8, 1.5]
+  lighting: ["overcast", "daylight"]
+  pedestrian_density: ["low", "medium"]
