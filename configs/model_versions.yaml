@@ -1,0 +1,12 @@
+text_to_video:
+  name: "Google Veo"
+   modality: image_to_video
+  version: "3.0"
+   notes: "Used for generative deployment condition"
+image_to_video:
+  name: "Runway"
+  version: "Gen-3"
+prompt_model:
+  name: "GPT-4o"
+  variant: "omni"
+  role: compositional_prompting
