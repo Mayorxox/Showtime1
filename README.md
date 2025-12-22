@@ -52,34 +52,24 @@ Showtime/
 ├── README.md
 ├── requirements.txt
 │
-├── pipeline/
-│   ├── phase1_embeddings/
-│   │   └── build_embeddings.py
-│   ├── phase2_prompts/
-│   │   └── compose_prompt.py
-│   ├── phase3_synthesis/
-│   │   └── refine_video_stub.py
-│   └── phase4_instrumentation/
-│       └── instrument_metadata.py
-│
-├── data/
-│   ├── images/
-│   │   └── sample_frame.png
-│   ├── embeddings/
-│   │   └── embeddings.json
-│   ├── prompts/
-│   │   ├── structured_prompt.json
-│   │   └── composed_prompt.txt
-│   └── metadata/
-│       └── stimulus_metadata.json
+├── assets/
+│   └── sample_frame.png
 │
 ├── configs/
 │   ├── model_versions.yaml
-│   ├── parameter_ranges.yaml
-│   └── seeds.yaml
+│   ├── seeds.yaml
+│   └── parameter_ranges.yaml
 │
-└── scripts/
-    └── run_pipeline.py
+├── data/
+│   ├── embeddings.json
+│   ├── structured_prompt.json
+│   └── composed_prompt.txt
+│
+├── scripts/
+│   ├── generate_embeddings.py
+│   ├── prompt_composer.py
+│   └── simulate_refinement.py
+
 
 ```
 
