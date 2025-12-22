@@ -29,46 +29,7 @@ python scripts/simulate_video_refinement.py
 - `data/prompts/` — example structured prompts and composed text prompts for generators
 - `figure/` — placeholder images for generation
 
-- Showtime/
-│
-├── README.md
-│
-├── pipeline/
-│   ├── phase1_embeddings/
-│   │   ├── environment.json
-│   │   ├── device.json
-│   │   └── behavior.json
-│   │
-│   ├── phase2_prompts/
-│   │   ├── prompt_template.json
-│   │   ├── composed_prompt_example.json
-│   │   └── llm_config.yaml
-│   │
-│   ├── phase3_synthesis/
-│   │   ├── generation_config.yaml
-│   │   ├── temporal_refinement.py
-│   │   └── proxemic_check.py
-│   │
-│   └── phase4_instrumentation/
-│       ├── metadata_schema.json
-│       ├── annotation_example.json
-│       └── export_settings.yaml
-│
-├── configs/
-│   ├── model_versions.yaml
-│   ├── seeds.yaml
-│   └── parameter_ranges.yaml
-│
-├── examples/
-│   ├── example_input/
-│   │   ├── environment.jpg
-│   │   └── embeddings.json
-│   │
-│   └── example_output/
-│       ├── generated_clip.mp4
-│       └── metadata.json
-│
-└── requirements.txt
+
 
 
 ## Notes
