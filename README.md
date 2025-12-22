@@ -10,41 +10,20 @@ Showtime focuses on social and perceptual validity—encoding environment, embod
 The repository is structured to reflect the four phases of the Chameleon pipeline:
 
 Phase I — Input Embedding Construction
-Structured representations of:
-
-environment (urban backdrops, spatial affordances),
-
-device embodiment (scale, morphology, sensors),
-
-behavior (proxemic rules, motion profiles).
+Structured representations of: environment (urban backdrops, spatial affordances), device embodiment (scale, morphology, sensors), behavior (proxemic rules, motion profiles).
 
 Phase II — Generative Prompt Composition
-Compositional prompt templates that translate embeddings into:
-
-structured JSON prompts (machine-readable),
-
-composed natural-language prompts suitable for multimodal diffusion models.
+Compositional prompt templates that translate embeddings into: structured JSON prompts (machine-readable), composed natural-language prompts suitable for multimodal diffusion models.
 
 Phase III — Video Synthesis and Refinement (Stubs)
 Placeholder utilities for:
-
-temporal consistency regularization,
-
-trajectory smoothing,
-
-proxemic compliance checks.
+temporal consistency regularization, trajectory smoothing, proxemic compliance checks.
 
 Phase IV — Instrumentation for Interaction Studies
 Metadata schemas and annotation structures that prepare generated videos for:
-
-pervasive displays,
-
-online surveys,
-
-controlled lab studies.
+pervasive displays, online surveys, controlled lab studies.
 
 The repository is backend-agnostic and does not call proprietary APIs by default.
-
 This repo is intentionally modular and ready to extend to real generative backends (e.g., Google Veo 3, Runway).
 
 ## Quick start
@@ -69,29 +48,39 @@ python scripts/simulate_refinement.py
 
 ## Structure
 ```bash
-Chameleon/
+Showtime/
+├── README.md
+├── requirements.txt
+│
 ├── pipeline/
 │   ├── phase1_embeddings/
+│   │   └── build_embeddings.py
 │   ├── phase2_prompts/
+│   │   └── compose_prompt.py
 │   ├── phase3_synthesis/
+│   │   └── refine_video_stub.py
 │   └── phase4_instrumentation/
+│       └── instrument_metadata.py
 │
-├── scripts/
-│   ├── generate_embeddings.py
-│   ├── prompt_composer.py
-│   └── simulate_refinement.py
-│
-├── examples/
-│   ├── example_input/
-│   └── example_output/
+├── data/
+│   ├── images/
+│   │   └── sample_frame.png
+│   ├── embeddings/
+│   │   └── embeddings.json
+│   ├── prompts/
+│   │   ├── structured_prompt.json
+│   │   └── composed_prompt.txt
+│   └── metadata/
+│       └── stimulus_metadata.json
 │
 ├── configs/
 │   ├── model_versions.yaml
-│   ├── seeds.yaml
-│   └── parameter_ranges.yaml
+│   ├── parameter_ranges.yaml
+│   └── seeds.yaml
 │
-├── requirements.txt
-└── README.md
+└── scripts/
+    └── run_pipeline.py
+
 ```
 
 
