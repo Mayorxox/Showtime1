@@ -1,3 +1,30 @@
+environment:
+  reference_frame:
+    type: photograph
+    resolution: [1920, 1080]
+
+device_embedding:
+  scale_tolerance: 0.10  # ±10%
+
+behavior_embedding:
+  approach_distance_m: [0.6, 1.5]
+  max_linear_velocity_mps: [0.6, 1.0]
+  curvature_constraint: "wheeled_platform_default"
+
+generation:
+  prompt_template: fixed
+  seed_control: true
+
+refinement:
+  temporal_consistency:
+    enabled: true
+    frame_window: [16, 24]
+
+ablations:
+  remove_behavior_constraints: false
+  disable_temporal_regularization: false
+  collapse_embeddings: false
+
 video:
   duration_sec: [10, 20]
   fps: [24, 30]
