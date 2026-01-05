@@ -20,8 +20,3 @@
     "yielding": true
   }
 }
-
-if __name__ == "__main__":
-    embeddings = build_embeddings("data/images/sample_frame.png")
-    with open("data/embeddings/embeddings.json", "w") as f:
-        json.dump(embeddings, f, indent=2)
